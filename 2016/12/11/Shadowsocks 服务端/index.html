@@ -22,7 +22,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://huili.im/archives/2016/">
+    <link rel="canonical" href="http://huili.im/2016/12/11/Shadowsocks 服务端/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -116,170 +116,210 @@
 
 <!-- Main Content -->
 
+<!--only post-->
 
-<!-- Page Header -->
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
-    <div class="row">
-        <header class="intro-header">
-            <div class="container">
-                <div class="site-heading text-center">
-                    <div class="about-me">
-                        <!--移动端头部显示-->
-                        <img src="http://oh5ccso4n.bkt.clouddn.com/avatar.png"/>
-                        <h5><a href="/about/">elmolee</a></h5>
-                        <p>null</p>
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1></h1>
+                    
+                    <span class="meta">
+                         作者 elmolee
+                        <span>
+                          日期 2016-12-11
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
     </div>
-</div>
-<!-- Main Content -->
-<div class="container custom-haojen-container">
-    <!-- Post Container -->
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-            <!-- Main Content -->
+    <div class="post-title-haojen">
+        <span>
+            
+        </span>
+    </div>
+</header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h2 id="Shadowsocks-服务端"><a href="#Shadowsocks-服务端" class="headerlink" title="Shadowsocks 服务端"></a><a href="https://github.com/shadowsocks/shadowsocks/wiki/Shadowsocks-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="external">Shadowsocks 服务端</a></h2><p>###1、安装</p>
+<p>###Debian / Ubuntu:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">apt-get install python-pip</div><div class="line">apt-get install python-setuptools</div><div class="line">pip install shadowsocks</div></pre></td></tr></table></figure></p>
+<p>###CentOS:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">yum install python-setuptools &amp;&amp; easy_install pip</div><div class="line">pip install shadowsocks</div></pre></td></tr></table></figure></p>
+<p>###2、创建配置文件<br>Create a config file /etc/shadowsocks.json. Example:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;:&quot;45.32.226.101&quot;,</div><div class="line">    &quot;server_port&quot;:8388,</div><div class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,</div><div class="line">    &quot;port_password&quot;:&#123;</div><div class="line">        &quot;1080&quot;:&quot;password&quot;,</div><div class="line">    &#125;,</div><div class="line">    &quot;timeout&quot;:300,</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">    &quot;fast_open&quot;:false</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>server</td>
+<td>the address your server listens</td>
+</tr>
+<tr>
+<td>server_port</td>
+<td>server port</td>
+</tr>
+<tr>
+<td>local_address</td>
+<td>the address your local listens</td>
+</tr>
+<tr>
+<td>port_password</td>
+<td>local port, password userd for encryption</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>in seconds</td>
+</tr>
+<tr>
+<td>method</td>
+<td>default: “aes-256-cfb”, see <a href="https://github.com/shadowsocks/shadowsocks/wiki/Encryption" target="_blank" rel="external">Encryption</a></td>
+</tr>
+<tr>
+<td>fast_open</td>
+<td>use <a href="https://github.com/shadowsocks/shadowsocks/wiki/TCP-Fast-Open" target="_blank" rel="external">TCP_FASTOPEN</a>, true / false</td>
+</tr>
+</tbody>
+</table>
+<p>###3、启动<br>To run in the background:<br><code>ssserver -c /etc/shadowsocks.json -d start</code></p>
 
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2016/12/11/Shadowsocks 服务端/">
-        <h2 class="post-title">
-            未命名
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-12-11
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                Shadowsocks 服务端###1、安装
-###Debian / Ubuntu:apt-get install python-pipapt-get install python-setuptoolspip install shadowsocks
-###CentOS:yum install p..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2016/11/23/Shadowsocks PAC/">
-        <h2 class="post-title">
-            Shadowsocks PAC
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-11-23
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                1. 安装1$ pip install genpac
-或从 github 安装开发版本1$ pip install https://github.com/JinnLynn/genpac/archive/master.zip
-2. 更新1$ pip install --upgrade genpac..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-
-<!-- 翻页 pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
-
-        </div>
-        <!-- Sidebar Container -->
-        <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-
-            <!-- About Me -->
-            <section class="visible-md visible-lg" style="padding: 0 18px">
-                <div class="short-about">
-                    <!--侧边栏头像-->
-                    
-                    <img src="http://oh5ccso4n.bkt.clouddn.com/avatar.png"/>
-                    
-                    <h5><a href="/about/">elmolee</a></h5>
-                    
+                <hr>
+                
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                     style="text-align: right"
+                     data-thread-key="2016/12/11/Shadowsocks 服务端/"
+                     data-title=""
+                     data-url="http://huili.im/2016/12/11/Shadowsocks 服务端/"
+                     data-images=""
+                     data-content="Shadowsocks 服务端###1、安装
+###Debian / Ubuntu:apt-g... | elmo&#39;s blog ">
+                    <div class="ds-share-inline">
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
+                    </div>
                     <hr>
-                    <!-- SNS Link 社交 -->
-                    <ul class="list-inline">
-                        
-                        
-                        
-                        <li>
-                            <a target="_blank" href="https://www.zhihu.com/people/lihui821">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                            </a>
-                        </li>
-                        
-
-                        
-                        <li>
-                            <a target="_blank" href="http://weibo.com/lihuiutopia">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
-
-                        
-
-                        
-                        <li>
-                            <a target="_blank" href="https://github.com/elmolee">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
-
-                        
-                    </ul>
                 </div>
-            </section>
+                <!-- 多说 Share end-->
+                
 
-            <!-- Featured Tags  标签 -->
-            
-            <section>
-                <div class="tags">
+                <ul class="pager">
                     
+                    
+                    <li class="next">
+                        <a href="/2016/11/23/Shadowsocks PAC/" data-toggle="tooltip" data-placement="top"
+                           title="Shadowsocks PAC">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                         data-thread-key="2016/12/11/Shadowsocks 服务端/"
+                         data-title=""
+                         data-url="http://huili.im/2016/12/11/Shadowsocks 服务端/">
+                    </div>
                 </div>
-            </section>
-            
+                <!-- 多说评论框 end -->
+                
 
-            
+                
 
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Shadowsocks-服务端"><span class="toc-text">Shadowsocks 服务端</span></a></li></ol>
+                </div>
+            </div>
         </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
     </div>
-</div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'elmolee';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user};
+    (function () {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
 
 <!-- Footer -->
 <!-- Footer -->
